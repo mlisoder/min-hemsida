@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Emelie Söderlund</title>
 
-  <!-- LATO -->
+  <!-- LATO LIGHT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -14,34 +14,22 @@
 </head>
 <body>
 
-<!-- TOPBAR -->
-<header class="topbar">
-  <div class="topbar__inner">
-    <div class="topbar__name">Emelie Söderlund</div>
-  </div>
+<!-- INTRO -->
+<header class="intro">
+  <p class="intro__name">Emelie Söderlund</p>
+
+  <p class="intro__text">
+    I specializes in helping brands come to life –<br>
+    across a variety of media platforms.
+  </p>
 </header>
 
-<!-- HERO / INTRO -->
-<section class="hero">
-  <div class="hero__inner">
-
-    <!-- LOGGA CENTRERAD -->
-    <img
-      class="hero__logo"
-      src="images/logo.svg"
-      alt="Emelie Söderlund logo"
-    >
-
-    <!-- INTROTEXT -->
-    <p class="hero__text">
-      I specializes in helping brands come to life –<br>
-      across a variety of media platforms.
-    </p>
-
-  </div>
+<!-- LOGGA (centrerad) -->
+<section class="logo">
+  <img src="images/logo.svg" alt="Emelie Söderlund logo">
 </section>
 
-<!-- WORK -->
+<!-- WORK / GRID -->
 <section class="work">
   <div class="grid grid--6" id="galleryGrid">
     <button class="thumb" data-index="0"><img src="images/01.jpg" alt=""></button>
@@ -65,11 +53,10 @@
     <button class="close" data-close="true">✕</button>
     <button class="prev">‹</button>
     <button class="next">›</button>
-    <img id="lightboxImage">
+    <img id="lightboxImage" alt="">
   </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
