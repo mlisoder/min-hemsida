@@ -12,19 +12,19 @@ html, body {
    INTRO / TEXT
    ========================= */
 .intro {
-  padding: 40px 20px 30px;   /* 👈 30px till bilderna */
+  padding: 40px 20px 24px;   /* luft som “innan” + 20px vänster */
 }
 
 .intro__name,
 .intro__text {
-  font-size: clamp(24px, 2.6vw, 34px); /* Display 2 */
+  font-size: clamp(24px, 2.6vw, 34px); /* Display 2-ish */
   line-height: 1.18;
   font-weight: 300;                    /* Lato Light */
-  text-align: left;
+  text-align: left;                    /* vänsterjusterad */
   max-width: 720px;
 }
 
-/* Litet mellanrum mellan namn och text */
+/* Lite mellanrum mellan namn och text */
 .intro__name {
   margin-bottom: 8px;
 }
@@ -35,7 +35,7 @@ html, body {
 .logo {
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;     /* 👈 samma avstånd innan grid */
+  padding-bottom: 20px;
 }
 
 .logo img {
@@ -80,6 +80,7 @@ html, body {
    ========================= */
 .contact {
   padding: 36px 20px 48px;
+  text-align: left;
 }
 
 .contact a {
