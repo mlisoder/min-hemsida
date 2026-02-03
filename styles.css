@@ -1,78 +1,46 @@
 /* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* GARANTERA LATO ÖVERALLT */
-html, body, button, input, textarea {
+/* GRUND */
+html, body {
   font-family: 'Lato', sans-serif;
-}
-
-body {
   background: #fff;
   color: #000;
 }
 
 /* =========================
-   TOPBAR (utan streck)
+   INTRO / TEXT
    ========================= */
-.topbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 64px;                 /* tillbaka till “som innan” */
-  background: rgba(255,255,255,0.95);
-  z-index: 10;
+.intro {
+  padding: 40px 20px 30px;   /* 👈 30px till bilderna */
 }
 
-.topbar__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 20px;              /* ✅ 20px från vänster */
-  display: flex;
-  align-items: center;
+.intro__name,
+.intro__text {
+  font-size: clamp(24px, 2.6vw, 34px); /* Display 2 */
+  line-height: 1.18;
+  font-weight: 300;                    /* Lato Light */
+  text-align: left;
+  max-width: 720px;
 }
 
-.topbar__name {
-  font-size: 14px;              /* diskret, som innan */
-  font-weight: 300;             /* ✅ Lato Light */
-  letter-spacing: 0.15px;
+/* Litet mellanrum mellan namn och text */
+.intro__name {
+  margin-bottom: 8px;
 }
 
 /* =========================
-   HERO (luft tillbaka)
+   LOGGA
    ========================= */
-.hero {
-  padding-top: 64px;            /* matchar topbar */
-  padding-bottom: 20px;         /* ✅ 20px till bilder */
-}
-
-.hero__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;              /* ✅ 20px från vänster */
-  min-height: 34vh;             /* tillbaka till mer luft */
+.logo {
   display: flex;
-  flex-direction: column;
-  align-items: center;          /* ✅ logga centrerad */
-  gap: 14px;
+  justify-content: center;
+  padding-bottom: 30px;     /* 👈 samma avstånd innan grid */
 }
 
-.hero__logo {
+.logo img {
   width: 280px;
   max-width: 70vw;
-  height: auto;
-  display: block;
-}
-
-/* Display 2-ish, större + Lato Light + vänster */
-.hero__text {
-  align-self: flex-start;       /* ✅ texten går mer vänster */
-  text-align: left;
-  max-width: 720px;
-
-  font-size: clamp(24px, 2.6vw, 34px); /* ✅ Display 2 + lite större */
-  line-height: 1.18;
-  font-weight: 300;             /* ✅ Lato Light */
-  color: rgba(0,0,0,0.72);
 }
 
 /* =========================
@@ -91,12 +59,13 @@ body {
   grid-template-rows: repeat(2, 1fr);
 }
 
+/* BILDER */
 .thumb {
   border: 0;
   padding: 0;
   background: none;
-  cursor: pointer;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .thumb img {
@@ -110,15 +79,14 @@ body {
    KONTAKT
    ========================= */
 .contact {
-  padding: 36px 20px 48px;      /* följer 20px-regeln */
-  text-align: center;
+  padding: 36px 20px 48px;
 }
 
 .contact a {
+  font-size: 14px;
+  font-weight: 300;
   color: #000;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 300;             /* Light även här om du vill */
 }
 
 .contact a:hover { opacity: 0.7; }
@@ -165,7 +133,6 @@ body {
   color: #fff;
   font-size: 26px;
   padding: 8px 12px;
-  cursor: pointer;
 }
 
 .close { top: 10px; right: 10px; font-size: 20px; }
@@ -181,10 +148,12 @@ body {
     grid-template-rows: repeat(3, 1fr);
   }
 
-  .hero__logo { width: 220px; }
+  .intro__name,
+  .intro__text {
+    font-size: clamp(20px, 5vw, 28px);
+  }
 
-  .hero__text {
-    max-width: 560px;
-    font-size: clamp(20px, 5vw, 28px); /* behåller display-känslan */
+  .logo img {
+    width: 220px;
   }
 }
