@@ -1,26 +1,21 @@
 /* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* GRUND */
-body {
+/* GARANTERA LATO ÖVERALLT */
+html, body, button, input, textarea {
   font-family: 'Lato', sans-serif;
-  background: white;
-  color: black;
 }
 
-/* =========================
-   TOPBAR (UTAN STRECK)
-   ========================= */
+body {
+  background: #fff;
+  color: #000;
+}
+
+/* TOPBAR (utan streck/linje) */
 .topbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;              /* 75 % av tidigare */
+  top: 0; left: 0; right: 0;
+  height: 64px;
   background: rgba(255,255,255,0.95);
   z-index: 10;
 }
@@ -29,54 +24,53 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;
-  padding: 0 36px;           /* mindre luft */
+  padding: 0 36px;          /* luft från kanten (IW-ish) */
   display: flex;
   align-items: center;
 }
 
 .topbar__name {
-  font-size: 14px;           /* närmare din gamla sida */
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.15px;
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* HERO */
 .hero {
-  padding-top: 64px;         /* matchar topbar */
-  padding-bottom: 24px;      /* MINDRE luft */
+  padding-top: 64px;
+  padding-bottom: 22px;     /* mindre vitt än innan */
 }
 
 .hero__inner {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 38vh;          /* 75 % av tidigare */
-  padding: 0 36px;           /* samma sidmarginal som topbar */
-  display: grid;
-  grid-template-columns: 1fr;
+  padding: 0 36px;          /* samma vänsterkant som namnet */
+  min-height: 34vh;         /* mindre vitt (75%-ish) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* ✅ logga centrerad */
   gap: 14px;
 }
 
-/* Logga centrerad visuellt, men inom vänsterkontext */
 .hero__logo {
   width: 280px;
   max-width: 70vw;
+  height: auto;
+  display: block;
 }
 
-/* TEXT: VÄNSTERSTÄLLD, RÄTT KÄNSLA */
+/* TEXT: större (Display 2-känsla) + mer vänster */
 .hero__text {
-  font-size: 15px;           /* mindre & mer editorial */
-  line-height: 1.4;
+  align-self: flex-start;   /* ✅ text börjar vid vänsterpadding */
+  text-align: left;
+  max-width: 640px;
+  font-size: clamp(22px, 2.4vw, 30px); /* ✅ större */
+  line-height: 1.18;
   font-weight: 400;
-  color: rgba(0,0,0,0.7);
-  text-align: left;          /* 👈 VIKTIGT */
-  max-width: 420px;
+  color: rgba(0,0,0,0.72);
 }
 
-/* =========================
-   WORK / FULLSCREEN GALLERI
-   ========================= */
+/* WORK / FULLSCREEN GRID */
 .work {
   height: 100vh;
   width: 100%;
@@ -92,11 +86,11 @@ body {
 
 /* RUTOR */
 .thumb {
-  border: none;
+  border: 0;
   padding: 0;
   background: none;
-  overflow: hidden;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .thumb img {
@@ -106,27 +100,21 @@ body {
   display: block;
 }
 
-/* =========================
-   KONTAKT
-   ========================= */
+/* KONTAKT */
 .contact {
-  padding: 36px 36px 48px;   /* 75 % luft */
+  padding: 36px 36px 48px;
   text-align: center;
 }
 
 .contact a {
-  font-size: 13px;
-  color: black;
+  color: #000;
   text-decoration: none;
+  font-size: 13px;
 }
 
-.contact a:hover {
-  opacity: 0.7;
-}
+.contact a:hover { opacity: 0.7; }
 
-/* =========================
-   LIGHTBOX
-   ========================= */
+/* LIGHTBOX */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -134,9 +122,7 @@ body {
   z-index: 1000;
 }
 
-.lightbox.open {
-  display: block;
-}
+.lightbox.open { display: block; }
 
 .backdrop {
   position: absolute;
@@ -158,55 +144,36 @@ body {
   max-width: 100%;
   max-height: 80vh;
   object-fit: contain;
-  background: black;
+  background: #000;
 }
 
 /* KNAPPAR */
-.close,
-.prev,
-.next {
+.close, .prev, .next {
   position: absolute;
+  border: 0;
   background: rgba(0,0,0,0.6);
-  color: white;
-  border: none;
+  color: #fff;
   font-size: 26px;
   padding: 8px 12px;
   cursor: pointer;
 }
 
-.close {
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-}
+.close { top: 10px; right: 10px; font-size: 20px; }
+.prev  { left: 10px; top: 50%; transform: translateY(-50%); }
+.next  { right: 10px; top: 50%; transform: translateY(-50%); }
 
-.prev {
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.next {
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* =========================
-   MOBIL
-   ========================= */
+/* MOBIL */
 @media (max-width: 800px) {
   .topbar__inner,
   .hero__inner {
     padding: 0 20px;
   }
 
-  .hero__logo {
-    width: 220px;
-  }
-
   .grid--6 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
+
+  .hero__logo { width: 220px; }
+  .hero__text { max-width: 520px; }
 }
