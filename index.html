@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Min Sida</title>
+  <title>Emelie Söderlund</title>
 
   <!-- LATO LIGHT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,57 +14,57 @@
 </head>
 <body>
 
-<!-- INTRO / TEXTBLOCK -->
-<header class="intro">
-  <p class="intro__name">Emelie Söderlund</p>
-  
-  <!-- LOGGA (centrerad visuellt, men utanför textflödet) -->
-<section class="logo">
-  <img src="images/logo.svg" alt="Emelie Söderlund logo">
-</section>
+  <!-- INTRO -->
+  <header class="intro">
+    <p class="intro__name">Emelie Söderlund</p>
 
-  <p class="intro__text">
-    I specialize in helping brands <br>
-    come to life – across a variety <br>
-    of media platforms.
-  </p>
-</header>
+    <section class="logo" aria-label="Logga">
+      <img src="images/logo.svg" alt="Emelie Söderlund logo">
+    </section>
 
+    <p class="intro__text">
+      I specialize in helping brands <br>
+      come to life – across a variety <br>
+      of media platforms.
+    </p>
+  </header>
 
-<!-- WORK / FULLSCREEN GRID -->
-<section class="work">
-  <div class="grid grid--6" id="galleryGrid">
-    <button class="thumb" data-index="0"><img src="images/01.jpg" alt=""></button>
-    <button class="thumb" data-index="1"><img src="images/02.jpg" alt=""></button>
-    <button class="thumb" data-index="2"><img src="images/03.jpg" alt=""></button>
-    <button class="thumb" data-index="3"><img src="images/04.jpg" alt=""></button>
-    <button class="thumb" data-index="4"><img src="images/05.jpg" alt=""></button>
-    <button class="thumb" data-index="5"><img src="images/06.jpg" alt=""></button>
-  </div>
-</section>
+  <!-- WORK -->
+  <section class="work" aria-label="Work">
+    <div class="grid grid--6" id="galleryGrid">
 
-<!-- KONTAKT -->
-<section class="contact"> 
-  <a href="mailto:info@emeliesoderlund.com">//</a>
-</section>
+      <button class="thumb" data-type="video" data-src="media/01.mp4" data-poster="images/01.jpg" aria-label="Öppna 1">
+        <img src="images/01.jpg" alt="">
+      </button>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <div class="backdrop" data-close="true"></div>
-  <div class="lightbox__content">
-    <button class="close" data-close="true">✕</button>
-    <button class="prev">‹</button>
-    <button class="next">›</button>
-    <img id="lightboxImage" alt="">
-  </div>
-</div>
+      <button class="thumb" data-type="video" data-src="media/02.mp4" data-poster="images/02.jpg" aria-label="Öppna 2">
+        <img src="images/02.jpg" alt="">
+      </button>
 
-<script src="script.js"></script>
+      <button class="thumb" data-type="gif" data-src="media/03.gif" data-poster="images/03.jpg" aria-label="Öppna 3">
+        <img src="images/03.jpg" alt="">
+      </button>
+
+      <button class="thumb" data-type="video" data-src="media/04.mp4" data-poster="images/04.jpg" aria-label="Öppna 4">
+        <img src="images/04.jpg" alt="">
+      </button>
+
+      <button class="thumb" data-type="gif" data-src="media/05.gif" data-poster="images/05.jpg" aria-label="Öppna 5">
+        <img src="images/05.jpg" alt="">
+      </button>
+
+      <button class="thumb" data-type="video" data-src="media/06.mp4" data-poster="images/06.jpg" aria-label="Öppna 6">
+        <img src="images/06.jpg" alt="">
+      </button>
+
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="contact">
+    <a href="mailto:info@emeliesoderlund.com">info@emeliesoderlund.com</a>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
