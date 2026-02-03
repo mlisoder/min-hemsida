@@ -3,8 +3,12 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #0b0c10;
-  color: white;
+  background: white;      /* 👈 vit bakgrund */
+  color: black;           /* 👈 svart text */
+}
+
+a {
+  color: black;
 }
 
 .container {
@@ -115,3 +119,4 @@ body {
   .prev { left: 10px; }
   .next { right: 10px; }
 }
+
