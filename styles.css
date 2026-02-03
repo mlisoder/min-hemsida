@@ -7,54 +7,66 @@
 
 /* GRUND */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background: white;
   color: black;
 }
 
-a {
-  color: black;
-  text-decoration: none;
+/* TOPBAR */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 10;
 }
 
-/* HEADER (kan tas bort om du vill ha helt clean) */
-.header {
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
+.topbar__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.header__inner {
-  max-width: 1200px;
-  margin: auto;
+.topbar__name {
+  font-size: 14px;
 }
 
 /* HERO */
 .hero {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
+  padding-top: 56px;
+  padding-bottom: 32px; /* mindre luft än IW */
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+.hero__inner {
+  min-height: 45vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 14px;
 }
 
-.hero p {
-  font-size: 18px;
-  max-width: 600px;
+.hero__logo {
+  width: min(320px, 70vw);
+  height: auto;
 }
 
-/* GALLERI FYLLER SKÄRMEN */
-#galleri {
+.hero__text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgba(0,0,0,0.7);
+}
+
+/* WORK / GALLERI */
+.work {
   height: 100vh;
-  width: 100%;
 }
 
-/* GRID 6 RUTOR */
 .grid--6 {
   height: 100%;
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -69,18 +81,28 @@ a {
   cursor: pointer;
 }
 
-/* BILDER FYLLER HELT */
 .thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
 }
 
-/* LITEN INTERAKTION */
-.thumb:hover img {
-  transform: scale(1.03);
+/* KONTAKT */
+.contact {
+  padding: 32px 20px 48px;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+}
+
+.contact a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contact a:hover {
+  opacity: 0.7;
 }
 
 /* LIGHTBOX */
@@ -111,9 +133,9 @@ a {
   justify-content: center;
 }
 
-.lightbox img {
+.lightbox__content img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80vh;
   object-fit: contain;
   background: black;
 }
@@ -126,36 +148,37 @@ a {
   background: rgba(0,0,0,0.6);
   color: white;
   border: none;
-  font-size: 32px;
+  font-size: 28px;
+  padding: 10px 14px;
   cursor: pointer;
-  padding: 10px 16px;
 }
 
 .close {
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
 }
 
 .prev {
-  left: 20px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .next {
-  right: 20px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 /* MOBIL */
 @media (max-width: 800px) {
-  .hero h1 {
-    font-size: 32px;
-  }
-
   .grid--6 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+  }
+
+  .hero__inner {
+    min-height: 40vh;
   }
 }
