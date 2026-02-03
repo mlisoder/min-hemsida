@@ -3,10 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Emelie Söderlund</title>
+
+  <!-- LATO FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,45 +26,79 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero__inner">
-    <!-- Byt till din riktiga logga -->
-    <img class="hero__logo" src="images/logo.svg" alt="Emelie Söderlund">
 
+    <!-- LOGGA -->
+    <!-- Byt src till din riktiga logga -->
+    <img
+      class="hero__logo"
+      src="images/logo.svg"
+      alt="Emelie Söderlund logo"
+    >
+
+    <!-- TEXT (vänsterställd) -->
     <p class="hero__text">
       I specializes in helping brands come to life –<br>
       across a variety of media platforms.
     </p>
+
   </div>
 </section>
 
-<!-- FULLSCREEN GALLERI -->
+<!-- WORK / FULLSCREEN GALLERI -->
 <section class="work">
   <div class="grid grid--6" id="galleryGrid">
-    <button class="thumb" data-index="0"><img src="images/01.jpg" alt=""></button>
-    <button class="thumb" data-index="1"><img src="images/02.jpg" alt=""></button>
-    <button class="thumb" data-index="2"><img src="images/03.jpg" alt=""></button>
-    <button class="thumb" data-index="3"><img src="images/04.jpg" alt=""></button>
-    <button class="thumb" data-index="4"><img src="images/05.jpg" alt=""></button>
-    <button class="thumb" data-index="5"><img src="images/06.jpg" alt=""></button>
+
+    <button class="thumb" data-index="0">
+      <img src="images/01.jpg" alt="">
+    </button>
+
+    <button class="thumb" data-index="1">
+      <img src="images/02.jpg" alt="">
+    </button>
+
+    <button class="thumb" data-index="2">
+      <img src="images/03.jpg" alt="">
+    </button>
+
+    <button class="thumb" data-index="3">
+      <img src="images/04.jpg" alt="">
+    </button>
+
+    <button class="thumb" data-index="4">
+      <img src="images/05.jpg" alt="">
+    </button>
+
+    <button class="thumb" data-index="5">
+      <img src="images/06.jpg" alt="">
+    </button>
+
   </div>
 </section>
 
 <!-- KONTAKT -->
 <section class="contact">
-  <a href="mailto:info@emeliesoderlund.com">info@emeliesoderlund.com</a>
+  <a href="mailto:info@emeliesoderlund.com">
+    info@emeliesoderlund.com
+  </a>
 </section>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <div class="backdrop" data-close="true"></div>
+
   <div class="lightbox__content">
-    <button class="close" data-close="true">✕</button>
-    <button class="prev">‹</button>
-    <button class="next">›</button>
-    <img id="lightboxImage">
+    <button class="close" data-close="true" aria-label="Close">✕</button>
+    <button class="prev" aria-label="Previous">‹</button>
+    <button class="next" aria-label="Next">›</button>
+
+    <img id="lightboxImage" alt="">
   </div>
 </div>
 
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
-
+✅ Snabb check (viktigt)
+Se till att du har detta i ditt repo:
