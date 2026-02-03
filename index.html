@@ -1,159 +1,62 @@
-/* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emelie Söderlund</title>
 
-/* GRUND */
-html, body {
-  font-family: 'Lato', sans-serif;
-  background: #fff;
-  color: #000;
-}
+  <!-- LATO LIGHT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-/* =========================
-   INTRO / TEXT
-   ========================= */
-.intro {
-  padding: 40px 20px 30px;   /* 👈 30px till bilderna */
-}
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-.intro__name,
-.intro__text {
-  font-size: clamp(24px, 2.6vw, 34px); /* Display 2 */
-  line-height: 1.18;
-  font-weight: 300;                    /* Lato Light */
-  text-align: left;
-  max-width: 720px;
-}
+<!-- INTRO -->
+<header class="intro">
+  <p class="intro__name">Emelie Söderlund</p>
 
-/* Litet mellanrum mellan namn och text */
-.intro__name {
-  margin-bottom: 8px;
-}
+  <p class="intro__text">
+    I specializes in helping brands come to life –<br>
+    across a variety of media platforms.
+  </p>
+</header>
 
-/* =========================
-   LOGGA
-   ========================= */
-.logo {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 30px;     /* 👈 samma avstånd innan grid */
-}
+<!-- LOGGA (centrerad) -->
+<section class="logo">
+  <img src="images/logo.svg" alt="Emelie Söderlund logo">
+</section>
 
-.logo img {
-  width: 280px;
-  max-width: 70vw;
-}
+<!-- WORK / GRID -->
+<section class="work">
+  <div class="grid grid--6" id="galleryGrid">
+    <button class="thumb" data-index="0"><img src="images/01.jpg" alt=""></button>
+    <button class="thumb" data-index="1"><img src="images/02.jpg" alt=""></button>
+    <button class="thumb" data-index="2"><img src="images/03.jpg" alt=""></button>
+    <button class="thumb" data-index="3"><img src="images/04.jpg" alt=""></button>
+    <button class="thumb" data-index="4"><img src="images/05.jpg" alt=""></button>
+    <button class="thumb" data-index="5"><img src="images/06.jpg" alt=""></button>
+  </div>
+</section>
 
-/* =========================
-   WORK / FULLSCREEN GRID
-   ========================= */
-.work {
-  height: 100vh;
-  width: 100%;
-}
+<!-- KONTAKT -->
+<section class="contact">
+  <a href="mailto:info@emeliesoderlund.com">info@emeliesoderlund.com</a>
+</section>
 
-.grid--6 {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="backdrop" data-close="true"></div>
+  <div class="lightbox__content">
+    <button class="close" data-close="true">✕</button>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+    <img id="lightboxImage" alt="">
+  </div>
+</div>
 
-/* BILDER */
-.thumb {
-  border: 0;
-  padding: 0;
-  background: none;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* =========================
-   KONTAKT
-   ========================= */
-.contact {
-  padding: 36px 20px 48px;
-}
-
-.contact a {
-  font-size: 14px;
-  font-weight: 300;
-  color: #000;
-  text-decoration: none;
-}
-
-.contact a:hover { opacity: 0.7; }
-
-/* =========================
-   LIGHTBOX
-   ========================= */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 1000;
-}
-
-.lightbox.open { display: block; }
-
-.backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-}
-
-.lightbox__content {
-  position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  margin: 5vh auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox__content img {
-  max-width: 100%;
-  max-height: 80vh;
-  object-fit: contain;
-  background: #000;
-}
-
-.close, .prev, .next {
-  position: absolute;
-  border: 0;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  font-size: 26px;
-  padding: 8px 12px;
-}
-
-.close { top: 10px; right: 10px; font-size: 20px; }
-.prev  { left: 10px; top: 50%; transform: translateY(-50%); }
-.next  { right: 10px; top: 50%; transform: translateY(-50%); }
-
-/* =========================
-   MOBIL
-   ========================= */
-@media (max-width: 800px) {
-  .grid--6 {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .intro__name,
-  .intro__text {
-    font-size: clamp(20px, 5vw, 28px);
-  }
-
-  .logo img {
-    width: 220px;
-  }
-}
+<script src="script.js"></script>
+</body>
+</html>
