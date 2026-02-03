@@ -39,10 +39,9 @@ html, body {
 }
 
 .logo img {
-  width: 280px;
-  max-width: 70vw;
+  width: 168px;      /* 60 % av 280px */
+  max-width: 60vw;
 }
-
 /* =========================
    WORK / FULLSCREEN GRID
    ========================= */
@@ -154,7 +153,8 @@ html, body {
     font-size: clamp(20px, 5vw, 28px);
   }
 
-  .logo img {
-    width: 220px;
-  }
+ .logo img {
+  width: 132px;      /* 60 % av 220px */
 }
+}
+
