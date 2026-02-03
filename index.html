@@ -3,47 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Min hemsida</title>
+  <title>Emelie Söderlund</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header class="header">
-  <div class="container header__inner">
-    <strong>Din logga</strong>
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar__inner">
+    <div class="topbar__name">Emelie Söderlund</div>
   </div>
 </header>
 
-<main class="container">
-  <section class="hero">
-    <h1>Det här är min hemsida</h1>
-    <p>En sida med sex kvadratiska bilder som öppnar bildspel.</p>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__inner">
+    <!-- Byt till din riktiga logga -->
+    <img class="hero__logo" src="images/logo.svg" alt="Emelie Söderlund">
 
-  <!-- GALLERI -->
-  <section id="galleri">
-    <div class="grid grid--6" id="galleryGrid">
-      <button class="thumb" data-index="0"><img src="images/01.jpg" alt=""></button>
-      <button class="thumb" data-index="1"><img src="images/02.jpg" alt=""></button>
-      <button class="thumb" data-index="2"><img src="images/03.jpg" alt=""></button>
-      <button class="thumb" data-index="3"><img src="images/04.jpg" alt=""></button>
-      <button class="thumb" data-index="4"><img src="images/05.jpg" alt=""></button>
-      <button class="thumb" data-index="5"><img src="images/06.jpg" alt=""></button>
-    </div>
-  </section>
-</main>
+    <p class="hero__text">
+      I specializes in helping brands come to life –<br>
+      across a variety of media platforms.
+    </p>
+  </div>
+</section>
+
+<!-- FULLSCREEN GALLERI -->
+<section class="work">
+  <div class="grid grid--6" id="galleryGrid">
+    <button class="thumb" data-index="0"><img src="images/01.jpg" alt=""></button>
+    <button class="thumb" data-index="1"><img src="images/02.jpg" alt=""></button>
+    <button class="thumb" data-index="2"><img src="images/03.jpg" alt=""></button>
+    <button class="thumb" data-index="3"><img src="images/04.jpg" alt=""></button>
+    <button class="thumb" data-index="4"><img src="images/05.jpg" alt=""></button>
+    <button class="thumb" data-index="5"><img src="images/06.jpg" alt=""></button>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact">
+  <a href="mailto:info@emeliesoderlund.com">info@emeliesoderlund.com</a>
+</section>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <div class="backdrop" data-close="true"></div>
-
   <div class="lightbox__content">
     <button class="close" data-close="true">✕</button>
     <button class="prev">‹</button>
     <button class="next">›</button>
-
     <img id="lightboxImage">
-    <p id="caption"></p>
   </div>
 </div>
 
