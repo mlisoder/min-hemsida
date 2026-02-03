@@ -1,8 +1,8 @@
 /* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* GARANTERA LATO ÖVERALLT */
-html, body, button, input, textarea {
+/* GARANTERA LATO */
+html, body, button {
   font-family: 'Lato', sans-serif;
 }
 
@@ -11,66 +11,65 @@ body {
   color: #000;
 }
 
-/* TOPBAR (utan streck/linje) */
+/* =========================
+   TOPBAR
+   ========================= */
 .topbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 64px;
+  height: 56px;
   background: rgba(255,255,255,0.95);
   z-index: 10;
 }
 
 .topbar__inner {
-  max-width: 1200px;
-  margin: 0 auto;
   height: 100%;
-  padding: 0 36px;          /* luft från kanten (IW-ish) */
+  padding-left: 10px;      /* 👈 nära kanten */
+  padding-right: 10px;
   display: flex;
   align-items: center;
 }
 
 .topbar__name {
-  font-size: 14px;
+  font-size: 18px;         /* 👈 samma som introtext */
   font-weight: 400;
-  letter-spacing: 0.15px;
 }
 
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 .hero {
-  padding-top: 64px;
-  padding-bottom: 22px;     /* mindre vitt än innan */
+  padding-top: 56px;
+  padding-bottom: 20px;    /* 20px till bilder */
 }
 
 .hero__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 36px;          /* samma vänsterkant som namnet */
-  min-height: 34vh;         /* mindre vitt (75%-ish) */
   display: flex;
   flex-direction: column;
-  align-items: center;      /* ✅ logga centrerad */
+  align-items: center;     /* logga centrerad */
   gap: 14px;
 }
 
+/* LOGGA */
 .hero__logo {
   width: 280px;
   max-width: 70vw;
-  height: auto;
-  display: block;
 }
 
-/* TEXT: större (Display 2-känsla) + mer vänster */
+/* INTROTEXT */
 .hero__text {
-  align-self: flex-start;   /* ✅ text börjar vid vänsterpadding */
-  text-align: left;
-  max-width: 640px;
-  font-size: clamp(22px, 2.4vw, 30px); /* ✅ större */
-  line-height: 1.18;
+  align-self: flex-start;  /* 👈 mot vänster */
+  padding-left: 10px;     /* 👈 10px från kanten */
+  padding-right: 10px;
+  font-size: 18px;        /* 👈 större text */
+  line-height: 1.25;
   font-weight: 400;
-  color: rgba(0,0,0,0.72);
+  max-width: calc(100% - 20px);
 }
 
-/* WORK / FULLSCREEN GRID */
+/* =========================
+   WORK / GRID
+   ========================= */
 .work {
   height: 100vh;
   width: 100%;
@@ -84,12 +83,11 @@ body {
   grid-template-rows: repeat(2, 1fr);
 }
 
-/* RUTOR */
+/* BILDER */
 .thumb {
   border: 0;
-  padding: 0;
   background: none;
-  cursor: pointer;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -100,21 +98,22 @@ body {
   display: block;
 }
 
-/* KONTAKT */
+/* =========================
+   KONTAKT
+   ========================= */
 .contact {
-  padding: 36px 36px 48px;
-  text-align: center;
+  padding: 40px 10px 60px;
 }
 
 .contact a {
+  font-size: 14px;
   color: #000;
   text-decoration: none;
-  font-size: 13px;
 }
 
-.contact a:hover { opacity: 0.7; }
-
-/* LIGHTBOX */
+/* =========================
+   LIGHTBOX
+   ========================= */
 .lightbox {
   position: fixed;
   inset: 0;
@@ -150,30 +149,23 @@ body {
 /* KNAPPAR */
 .close, .prev, .next {
   position: absolute;
-  border: 0;
   background: rgba(0,0,0,0.6);
   color: #fff;
-  font-size: 26px;
+  border: 0;
+  font-size: 24px;
   padding: 8px 12px;
-  cursor: pointer;
 }
 
-.close { top: 10px; right: 10px; font-size: 20px; }
+.close { top: 10px; right: 10px; }
 .prev  { left: 10px; top: 50%; transform: translateY(-50%); }
 .next  { right: 10px; top: 50%; transform: translateY(-50%); }
 
 /* MOBIL */
 @media (max-width: 800px) {
-  .topbar__inner,
-  .hero__inner {
-    padding: 0 20px;
-  }
-
   .grid--6 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
 
   .hero__logo { width: 220px; }
-  .hero__text { max-width: 520px; }
 }
