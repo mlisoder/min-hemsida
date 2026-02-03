@@ -13,61 +13,65 @@ body {
 }
 
 /* =========================
-   TOPBAR – IW-KÄNSLA
+   TOPBAR (UTAN STRECK)
    ========================= */
 .topbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 72px; /* mer luft, likt IW */
-  background: rgba(255,255,255,0.92);
-  border-bottom: 1px solid #e6e6e6;
+  height: 64px;              /* 75 % av tidigare */
+  background: rgba(255,255,255,0.95);
   z-index: 10;
 }
 
 .topbar__inner {
-  max-width: 1200px;          /* samma “container”-tänk som IW */
+  max-width: 1200px;
   margin: 0 auto;
   height: 100%;
-  padding: 0 48px;            /* 👈 VIKTIGT: luften från kanten */
+  padding: 0 36px;           /* mindre luft */
   display: flex;
   align-items: center;
 }
 
 .topbar__name {
-  font-size: 15px;            /* diskret, editorial */
-  letter-spacing: 0.2px;
+  font-size: 14px;           /* närmare din gamla sida */
+  font-weight: 400;
+  letter-spacing: 0.15px;
 }
 
 /* =========================
    HERO
    ========================= */
 .hero {
-  padding-top: 72px;          /* matchar topbar-höjden */
-  padding-bottom: 40px;       /* mindre än IW men luftig */
+  padding-top: 64px;         /* matchar topbar */
+  padding-bottom: 24px;      /* MINDRE luft */
 }
 
 .hero__inner {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 50vh;
-  padding: 0 48px;            /* samma sidmarginal som header */
+  min-height: 38vh;          /* 75 % av tidigare */
+  padding: 0 36px;           /* samma sidmarginal som topbar */
   display: grid;
-  place-items: center;
-  text-align: center;
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
 
+/* Logga centrerad visuellt, men inom vänsterkontext */
 .hero__logo {
-  width: min(340px, 70vw);
-  height: auto;
+  width: 280px;
+  max-width: 70vw;
 }
 
+/* TEXT: VÄNSTERSTÄLLD, RÄTT KÄNSLA */
 .hero__text {
-  font-size: 17px;            /* något större, IW-likt */
-  line-height: 1.45;
+  font-size: 15px;           /* mindre & mer editorial */
+  line-height: 1.4;
+  font-weight: 400;
   color: rgba(0,0,0,0.7);
+  text-align: left;          /* 👈 VIKTIGT */
+  max-width: 420px;
 }
 
 /* =========================
@@ -106,13 +110,12 @@ body {
    KONTAKT
    ========================= */
 .contact {
-  padding: 48px 48px 64px;
-  border-top: 1px solid #e6e6e6;
+  padding: 36px 36px 48px;   /* 75 % luft */
   text-align: center;
 }
 
 .contact a {
-  font-size: 14px;
+  font-size: 13px;
   color: black;
   text-decoration: none;
 }
@@ -166,25 +169,25 @@ body {
   background: rgba(0,0,0,0.6);
   color: white;
   border: none;
-  font-size: 28px;
-  padding: 10px 14px;
+  font-size: 26px;
+  padding: 8px 12px;
   cursor: pointer;
 }
 
 .close {
-  top: 12px;
-  right: 12px;
-  font-size: 22px;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
 }
 
 .prev {
-  left: 12px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .next {
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -195,15 +198,15 @@ body {
 @media (max-width: 800px) {
   .topbar__inner,
   .hero__inner {
-    padding: 0 24px;          /* mindre marginal på mobil */
+    padding: 0 20px;
+  }
+
+  .hero__logo {
+    width: 220px;
   }
 
   .grid--6 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-  }
-
-  .hero__text {
-    font-size: 16px;
   }
 }
