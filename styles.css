@@ -1,30 +1,41 @@
 /* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 /* GRUND */
-html, body {
+html,
+body {
   font-family: 'Lato', sans-serif;
   background: #fff;
   color: #000;
 }
 
-/* INTRO / TEXT */
+/* =========================
+   INTRO / TEXT
+   ========================= */
 .intro {
-  padding: 40px 20px 30px;
+  padding: 40px 20px 30px; /* 30px till grid */
 }
 
 .intro__name,
 .intro__text {
-  font-size: clamp(24px, 2.6vw, 34px);
+  font-size: clamp(24px, 2.6vw, 34px); /* Display 2 */
   line-height: 1.18;
-  font-weight: 300;          /* Lato Light */
+  font-weight: 300; /* Lato Light */
   text-align: left;
   max-width: 720px;
 }
 
-.intro__name { margin-bottom: 10px; }
+.intro__name {
+  margin-bottom: 10px;
+}
 
-/* LOGGA */
+/* =========================
+   LOGGA
+   ========================= */
 .logo {
   display: flex;
   justify-content: center;
@@ -32,46 +43,64 @@ html, body {
 }
 
 .logo img {
-  width: 168px;              /* 60% */
+  width: 168px; /* 60 % */
   max-width: 60vw;
   height: auto;
   display: block;
 }
 
-/* WORK / GRID */
+/* =========================
+   WORK / GRID
+   ========================= */
 .work {
-  height: 100vh;             /* desktop: grid fyller skärmen */
   width: 100%;
+  height: 100vh; /* desktop: fyller skärmen */
 }
 
 .grid--6 {
-  height: 100%;
   width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
 
-/* RUTOR */
+/* =========================
+   RUTOR
+   ========================= */
 .thumb {
+  position: relative;
   border: 0;
   padding: 0;
-  background: none;
+  background: #000; /* 👈 förhindrar vit flash */
   overflow: hidden;
   cursor: pointer;
-  position: relative;
 }
 
-/* Bild / video fyller rutan */
+/* Bild & video fyller rutan */
 .thumb img,
 .thumb video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* KONTAKT */
+/* Video visas först när redo */
+.thumb video {
+  opacity: 0;
+  transition: opacity 120ms linear;
+}
+
+.thumb.isPlaying video {
+  opacity: 1;
+}
+
+/* =========================
+   KONTAKT
+   ========================= */
 .contact {
   padding: 36px 20px 48px;
   text-align: left;
@@ -84,26 +113,30 @@ html, body {
   text-decoration: none;
 }
 
-.contact a:hover { opacity: 0.7; }
+.contact a:hover {
+  opacity: 0.7;
+}
 
-/* MOBIL: 1 kolumn, scroll */
+/* =========================
+   MOBIL
+   ========================= */
 @media (max-width: 800px) {
   .work {
-    height: auto;            /* viktigt: så du kan scrolla */
+    height: auto; /* tillåt scroll */
   }
 
   .grid--6 {
     height: auto;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 kolumn */
     grid-template-rows: none;
   }
 
   .thumb {
-    aspect-ratio: 1 / 1;     /* kvadratiskt på mobil */
+    aspect-ratio: 1 / 1; /* kvadratisk */
   }
 
   .logo img {
-    width: 132px;            /* 60% på mobil */
+    width: 132px; /* 60 % på mobil */
   }
 
   .intro__name,
